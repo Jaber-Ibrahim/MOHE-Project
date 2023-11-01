@@ -1,0 +1,22 @@
+.Button {
+    width: 20rem;
+    padding: 1.57rem 1.12rem;
+    flex-shrink: 0;
+    border-radius: 1.5rem;
+    color: #FFF;
+    text-align: center;
+    font-size: 2.242rem;
+    font-weight: 500;
+    line-height: 139.023%;
+    background-color: #2364C6;
+}
+
+
+.Light {
+    border: 3px solid var(--blue-color);
+    background-color: transparent;
+    font-size: 2rem;
+    color: #020202;
+    color: var(--black-color);
+    font-weight: 600;
+}
