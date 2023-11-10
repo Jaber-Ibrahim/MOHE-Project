@@ -1,4 +1,4 @@
-import {Hero , LastNews, MediaNews ,Institutions , Services} from "./../Sections/importSections"
+import {Hero , LastNews, MediaNews ,Institutions} from "./../Sections/importSections"
 import {Container} from "./../Components/importComponents"
 
 const Home = () => {
@@ -8,7 +8,6 @@ const Home = () => {
         <MediaNews/>
         <LastNews/>
         <Institutions/>
-        <Services/>
     </Container>
   )
 }
