@@ -1,0 +1,54 @@
+
+.JI_MediaNews_Card {
+  width: calc(100%/3);
+  min-height: 51rem !important;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--white-color);
+  border-radius: 1.8rem;
+}
+
+
+.JI_MediaNews_Card img {
+  width: 100%;
+  border-radius: 1.8rem 1.8rem 0 0;
+  height: 30rem;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.JI_MediaNews_Card_Info {
+  padding: 2.2rem;
+  background-color: var(--white-color);
+  border-radius: 0 0 1.8rem 1.8rem; 
+}
+
+.JI_MediaNews_Card_Info .JI_MediaNews_Card_h1 {
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding-bottom: 2.7rem;
+  border-bottom: 1px solid var(--grey-color);
+}
+
+.JI_MediaNews_Card_Info .JI_MediaNews_Card_span {
+  color: var(--blue-color);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.JI_MediaNews_Card_Info .JI_MediaNews_Card_p , 
+.JI_MediaNews_Card_Info .JI_MediaNews_Card_address {
+  color: var(--darker-grey);
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding-top: 2.7rem;
+}
+
+
+@media(max-width:992px) {
+  .JI_MediaNews_Card {
+    width: 60%;
+  }
+}

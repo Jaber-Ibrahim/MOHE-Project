@@ -1,0 +1,18 @@
+.swiper {
+    padding-bottom: 50px;
+}
+.swiper-wrapper {
+    /* display: grid !important; */
+    grid-template-columns: repeat(auto-fill,minmax(440px,1fr)) !important;
+}
+
+.swiper-pagination-bullet {
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--blue-color) !important;
+    transform: scale(1.4) !important;
+    transition: all var(--transition-delay);
+}

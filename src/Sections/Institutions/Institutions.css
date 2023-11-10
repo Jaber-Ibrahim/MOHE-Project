@@ -1,0 +1,44 @@
+.JI_Institution_Card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.2rem;
+    gap: 2rem;
+    border-radius: 1.8rem;
+    background-color: var(--white-color);
+    box-shadow: 0px 7px 5.5px 0px rgba(0, 0, 0, 0.10);
+    width: calc(100%/3);
+}
+
+.JI_Institution_Card .JI_Institution_Card_H1 {
+    font-size: 3.8rem;
+    font-weight: 600;
+    width: max-content;
+    /* width: 100%; */
+}
+
+.JI_Institution_Card .JI_Institution_Card_H3 {
+    padding: 1.4rem 1rem;
+    border-radius: 1.5rem;
+    width: 100%;
+    text-align: center;
+    border: .3rem solid var(--blue-color);
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 139.023%;
+}
+
+.JI_Institution_Card button {
+    width: 100% !important;
+}
+
+
+@media(max-width:992px) {
+    .JI_Institution_Card {
+      width: 60%;
+    }
+    .JI_Institution_Card .JI_Institution_Card_H1 {
+        font-size: 3.5rem;
+    }
+  }

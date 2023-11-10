@@ -18,8 +18,10 @@
   --lighter-blue : #ccd9ed;
   --black-color : #020202;
   --light-black-color : #242424;
+  --darker-grey : #403F3F;
   --dark-grey : #5b5b5b;
   --grey-color : #a3a3a3;
+  --grey-color2 : #E3E1E1;
   --light-grey : #ebebeb;
   --transition-delay : .5s;
 }
