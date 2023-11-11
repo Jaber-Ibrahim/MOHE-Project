@@ -1,6 +1,5 @@
 
-const institutionsData = 
-[
+const institutionsData = [
     {
     title : "مديريات الوزارة", 
     first : "مديرية شؤون الطلاب للجامعات ",

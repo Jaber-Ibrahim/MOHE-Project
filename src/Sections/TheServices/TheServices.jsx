@@ -1,26 +1,38 @@
 import classes from "./style.module.css";
 import { Card } from "../../Components/importComponents";
 import service1 from "../../assets/service1.png";
-import service2 from "../../assets/service2.png";
-import service3 from "../../assets/service3.png";
-import service4 from "../../assets/service4.png";
-import service5 from "../../assets/service5.png";
-import service6 from "../../assets/service6.png";
-import service7 from "../../assets/service7.png";
-import service8 from "../../assets/service8.png";
 
+import axios from "./../../Components/axios/customAxios"
+import { useState , useEffect } from "react";
 
 const TheServices = () => {
+
+  const [services2, setservices2] = useState("");
+  let Myservices2;
+
+    useEffect( () => {
+      axios.get("7c79aa97-057c-4137-8885-1fe20de402e2",services2)
+                .then((response) => {
+                  setservices2(response.data.data);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+      }, []);
+
+      if(services2) {
+        Myservices2 = services2.map((card,index) => {
+          return (
+            <Card key={`${index} ${card.name}`} img={service1} title={card.name} />
+
+          )
+        })
+      }
+
+
   return (
     <div className={classes.container}>
-      <Card img={service1} title="شارك برأيك" />
-      <Card img={service2} title="دليل الجامعات" />
-      <Card img={service3} title="النشرة البريدية" />
-      <Card img={service4} title="استفسارات" />
-      <Card img={service5} title="احصائيات "  title2=" و مؤشرات"    />
-      <Card img={service6} title="اللجنة الوطنية " title2="  للتبادل الطلابي"   />
-      <Card img={service7} title="دليل منظومة " title2="التعليم العالي" />
-      <Card img={service8} title="المكتبات " title2=" الالكترونية"  />
+      {Myservices2}
     </div>
   );
 };

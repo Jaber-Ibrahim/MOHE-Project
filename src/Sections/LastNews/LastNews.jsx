@@ -1,37 +1,31 @@
 import {MainTitle , LastNewsCard } from "./../../Components/importComponents"
-import LastNewsData from './../../data/lastNewData';
 import axios from "./../../Components/axios/customAxios"
 import { useState , useEffect } from "react";
 
 const LastNews = () => {
-  const [news, setNews] = useState();
+  const [news, setNews] = useState("");
+  let LastNewsCards;
 
-  useEffect(() => {
-    axios.get("e22743e0-c909-497f-bd4d-9db1ca6246cd",news)
-      .then((response)=> {
-        setNews(response.data.data)
-        console.log(response.data.data)
-        if(news) {
-          console.log(news)
-          let LastNewsCards = LastNewsData.map((card) => {
-            return (
-              <LastNewsCard key = {card.id}
-              title ={card.title}/>
-            )
-          })
-        }
-      })
-      .catch((error) =>{
-        console.log(error)
-      })
-  }, []);
-  
-  // let LastNewsCards = LastNewsData.map((card) => {
-  //   return (
-  //     <LastNewsCard key = {card.id}
-  //     title ={card.title}/>
-  //   )
-  // })
+    useEffect( () => {
+      axios.get("a5a5d7fc-3b77-4f72-813a-68507ef5693c",news)
+                .then((response) => {
+                  setNews(response.data.data);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+      }, []);
+
+      if(news) {
+        LastNewsCards = news.map((card,index) => {
+          return (
+            <LastNewsCard key={`${index} ${card.title}`}
+            title={card.title}/>
+          )
+        })
+      }
+
+
   return (
     <>
         <MainTitle title="آخر الأخبار"/>

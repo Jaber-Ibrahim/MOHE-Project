@@ -3,17 +3,33 @@ import { Splide, SplideSlide,SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import Card from './../../Components/ServiceCard/Card';
 import service1 from "../../assets/service1.png";
-import service2 from "../../assets/service2.png";
-import service3 from "../../assets/service3.png";
-import service4 from "../../assets/service4.png";
-import service5 from "../../assets/service5.png";
-import service6 from "../../assets/service6.png";
-import service7 from "../../assets/service7.png";
-import service8 from "../../assets/service8.png";
 import classes from './style.module.css'
 import './slider.css'
+import axios from "./../../Components/axios/customAxios"
+import { useState , useEffect } from "react";
 
 const ServiceSlider = () => {
+  const [services, setservices] = useState("");
+  let Myservices;
+
+    useEffect( () => {
+      axios.get("7c79aa97-057c-4137-8885-1fe20de402e2",services)
+                .then((response) => {
+                  setservices(response.data.data);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+      }, []);
+
+      if(services) {
+        Myservices = services.map((card,index) => {
+          return (
+            <SplideSlide key={`${card.name} ${index}`}><Card img={service1} title={card.name} /></SplideSlide>
+          )
+        })
+      }
+
   return (
     <div className={classes.SliderContainer}>
         <Splide
@@ -28,14 +44,7 @@ const ServiceSlider = () => {
             gap:'1rem'
           }}>
             <SplideTrack >
-            <SplideSlide><Card img={service1} title=" شارك برأيك" /></SplideSlide>
-            <SplideSlide><Card img={service2} title="دليل الجامعات" /></SplideSlide>
-            <SplideSlide><Card img={service3} title="النشرة البريدية" /></SplideSlide>
-            <SplideSlide><Card img={service4} title="استفسارات"  /></SplideSlide>
-            <SplideSlide><Card img={service5} title="احصائيات و مؤشرات "/></SplideSlide>
-            <SplideSlide><Card img={service6} title="اللجنة الوطنية للتبادل الطلابي "/></SplideSlide>
-            <SplideSlide><Card img={service7} title="دليل منظومة التعليم العالي "/></SplideSlide>
-            <SplideSlide><Card img={service8} title="المكتبات الالكترونية " /></SplideSlide>
+            {Myservices}
             </SplideTrack>
           <div className='splide__pagination'></div>
           </Splide>

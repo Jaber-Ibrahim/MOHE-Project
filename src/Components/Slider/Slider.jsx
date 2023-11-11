@@ -20,16 +20,15 @@ const Slider = (props) => {
         stretch: 0,
         slideShadows: true,
         }}
-        // autoplay={{
-        //     delay: 2500,
-        //     pauseOnMouseEnter : true,
-        //   }}
+        autoplay={{
+            delay: 2500,
+            pauseOnMouseEnter : true,
+          }}
         pagination={{
             clickable: true,
           }}
-        // modules={[Autoplay, EffectCoverflow, Pagination]}
-        modules={[ EffectCoverflow, Pagination]}
-        // className="mySwipe"
+        modules={[Autoplay, EffectCoverflow, Pagination]}
+        className="mySwipe"
     >
         {props.children}
     </Swiper>
